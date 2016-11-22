@@ -69,12 +69,20 @@ class CronController extends Controller
             dd('No hay pasajes aun');
         }
         else {
-            Mail::raw('Hay pasaje apurate..', function($message)
+//            Mail::raw('Hay pasaje apurate..', function($message)
+//            {
+//                $message->from('conviasa@bot.com', 'Im bot');
+//
+//                $message->to(['sandrajaimesduran@gmail.com', 'glendy.ramirez1989@gmail.com']);
+//            });
+
+            Mail::send('emails.mailEvent', ['html' => $cadena], function($message)
             {
                 $message->from('conviasa@bot.com', 'Im bot');
 
-                $message->to(['sandrajaimesduran@gmail.com']);
+                $message->to(['sandrajaimesduran@gmail.com', 'glendy.ramirez1989@gmail.com']);
             });
+
 
             dd('Se encontro pasajes notificamos por correo');
         }

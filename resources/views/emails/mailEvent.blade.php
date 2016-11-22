@@ -1,1 +1,3 @@
-Hi, I am from Itsolutionstuff.com from mailgun testing.
+Hay pasaje apurate ..
+<br />
+{!! $html !!}
